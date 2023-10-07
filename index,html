@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OAuth2 Redirect</title>
+</head>
+<body>
+    <h1>OAuth2 Redirect</h1>
+    <p>This page is used for OAuth2 redirect. Please return to the application.</p>
+</body>
+</html>
