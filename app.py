@@ -57,6 +57,7 @@ def callback():
             file.write(f'{accs}\n')
         id = getuserid(accs)
         main(accs, id)
+        return render_template('index.html')
     else:
         return f'Error{response.status_code}, {response.text}'
 
