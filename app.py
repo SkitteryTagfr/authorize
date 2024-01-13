@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 clid = '1172519095627960321'
 secret = 'kLAx3iYIzL5Tge_sEo1hC6PhIHe1ZOIg'
-url = 'http://localhost:8000/callback' 
+url = 'http://localhost:8000/'
 tkn = 'MTE3MjUxOTA5NTYyNzk2MDMyMQ.Gfw3Q1.xmlU2WlLas4dHSPMzVHNNmpzVqHszUjLXX9InY' 
 def join(acc, guildid, id):
     headers = {
@@ -18,7 +18,7 @@ def join(acc, guildid, id):
     print(response.text)
 def main(accs, iddd):
     guildids = []
-    with open("C:/Users/r0bin/Downloads/discordraper/guilds.txt", 'r') as file:
+    with open("guilds.txt", 'r') as file:
         ids = file.read().splitlines()
         for id in ids:
             guildids.append(id)
@@ -48,11 +48,12 @@ def callback():
     }
     response = requests.post('https://discord.com/api/oauth2/token', data=data)
     print(response.text)
+    
     if response.status_code == 200:
         jsonn = response.json()
         accs = jsonn.get('access_token')
         print(accs)
-        with open("C:/Users/r0bin/Downloads/discordraper/accesstokens.txt", "a") as file:
+        with open("accesstokens.txt", "a") as file:
             file.write(f'{accs}\n')
         id = getuserid(accs)
         main(accs, id)
